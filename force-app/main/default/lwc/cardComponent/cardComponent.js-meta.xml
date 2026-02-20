@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <!-- Internal Lightning Experience pages -->
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+
+        <!-- Experience Builder: makes it draggable onto pages -->
+        <target>lightningCommunity__Page</target>
+
+        <!-- Experience Builder: makes properties editable in the panel -->
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <!-- Config for internal Lightning pages (properties work here) -->
+        <targetConfig targets="lightning__RecordPage,lightning__AppPage,lightning__HomePage">
+            <property name="iconName"     type="String" label="Icon Name"     description="Enter a Lightning icon name like utility:info"/>
+            <property name="title"        type="String" label="Title"         description="Heading text"/>
+            <property name="description"  type="String" label="Description"   description="Paragraph text"/>
+        </targetConfig>
+
+        <!-- Config for Experience Builder (properties editable here) -->
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="iconName"     type="String" label="Icon Name"     description="Enter a Lightning icon name like utility:info"/>
+            <property name="title"        type="String" label="Title"         description="Heading text"/>
+            <property name="description"  type="String" label="Description"   description="Paragraph text"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

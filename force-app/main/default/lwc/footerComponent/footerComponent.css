@@ -1,6 +1,7 @@
+/* FOOTER BASE */
 .footer {
-    background-color: #0b2a3f;
-    color: #d1e6f5;
+    background-color: hsl(var(--bank-blue));
+    color: hsl(var(--bank-blue-light));
     padding: 60px 80px 30px;
     font-family: "Segoe UI", Arial, sans-serif;
 }
@@ -9,15 +10,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    /* flex-wrap: wrap; */
-    /* gap: 40px; */
-    
+    flex-wrap: wrap; /* ensure wrapping on smaller screens */
+    gap: 40px;
 }
 
 /* Branding */
 .footer-brand {
     max-width: 420px;
-    margin-right: 300px
+    margin-right: 300px;
 }
 
 .logo {
@@ -41,7 +41,7 @@
 .footer-links h3 {
     font-size: 18px;
     margin-bottom: 16px;
-    color: #ffffff;
+    color: hsl(var(--primary-foreground));
 }
 
 .footer-links ul {
@@ -56,13 +56,13 @@
 
 .footer-links a {
     text-decoration: none;
-    color: #d1e6f5;
+    color: hsl(var(--primary-foreground));
     font-size: 15px;
     transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-    color: #38bdf8;
+    color: hsl(var(--highlight-color));
 }
 
 /* Divider */
@@ -72,14 +72,25 @@
     margin: 40px 0 20px;
 }
 
-/* Bottom */
+/* Bottom Text */
 .footer-bottom {
     text-align: center;
     font-size: 14px;
     opacity: 0.75;
 }
 
-/* Responsive */
+/* RESPONSIVE: Tablet */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 50px 40px 25px;
+    }
+
+    .footer-brand {
+        margin-right: 200px;
+    }
+}
+
+/* RESPONSIVE: Mobile */
 @media (max-width: 768px) {
     .footer {
         padding: 40px 24px 20px;
@@ -88,5 +99,40 @@
     .footer-container {
         flex-direction: column;
         gap: 32px;
+    }
+
+    .footer-brand {
+        margin-right: 0;
+    }
+
+    .footer-links h3 {
+        font-size: 16px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .logo-image {
+        height: 80px;
+    }
+}
+
+/* RESPONSIVE: Small Mobile */
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 16px 16px;
+    }
+
+    .footer-links h3 {
+        font-size: 14px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .logo-image {
+        height: 60px;
     }
 }
